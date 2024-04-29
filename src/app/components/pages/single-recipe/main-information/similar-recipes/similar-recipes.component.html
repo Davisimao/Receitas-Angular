@@ -1,23 +1,17 @@
-<div class="container d-flex">
-  <input type="text" name="search" placeholder="Pesquise por suas receitas" [(ngModel)]="query"
-    (keydown.enter)="getSearch()" />
-  <button (click)="getSearch()">Pesquisar</button>
-</div>
-
-<div class="container mt-5 d-flex flex-wrap gap-3 justify-content-center">
-  <div routerLink="/recipe" [queryParams]="{id: food.id}" class=" foodCard" *ngFor="let food of foods">
-    <img *ngIf="food.image; else noImage" src={{food.image}} alt={{food.title}} class="cardImage">
-    <p class="text-center p-4">
-      <strong>
-        {{food.title}}
-      </strong>
-    </p>
+<div>
+  <p class="my-5 h3 text-center">Receitas similares:</p>
+  <div *ngIf="similarRecipes; else noRecipe" class="d-flex gap-4 flex-wrap justify-content-center">
+    <div routerLink="/recipe" [queryParams]="{id: recipe.id}" (click)="reloadPage()" class="cardRecipe p-3"
+      *ngFor="let recipe of similarRecipes">
+      <p><strong><u>Nome da receita:</u> </strong> {{recipe.title}}</p>
+      <p><strong><u>Tempo de preparo:</u> </strong> {{recipe.readyInMinutes}} minutos</p>
+    </div>
   </div>
 </div>
 
-<div *ngIf="loading" class="spinner-border d-block mx-auto mt-5" role="status">
+<div *ngIf="loading" class="spinner-border d-block mx-auto my-5" role="status">
 </div>
 
-<ng-template #noImage>
-  <p class="text-center mt-3"><strong>Sem imagem no momento</strong></p>
+<ng-template #noRecipe>
+  <p class="text-center my-5"><strong>Sem receitas semelhantes no momento</strong></p>
 </ng-template>
