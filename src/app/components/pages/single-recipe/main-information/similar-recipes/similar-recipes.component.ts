@@ -29,7 +29,7 @@ export class SimilarRecipesComponent implements OnInit {
 
   reloadPage() {
     setTimeout(() => {
-      (window.location.reload, 1)
+      (window.location.reload(), 1)
     })
   }
 }
