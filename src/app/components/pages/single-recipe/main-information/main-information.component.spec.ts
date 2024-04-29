@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainInformationComponent } from './main-information.component';
+import { SingleRecipeComponent } from '../single-recipe.component';
 
 describe('MainInformationComponent', () => {
   let component: MainInformationComponent;
@@ -8,9 +9,9 @@ describe('MainInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainInformationComponent ]
+      declarations: [MainInformationComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MainInformationComponent);
     component = fixture.componentInstance;

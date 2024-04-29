@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SimilarRecipesComponent } from './similar-recipes.component';
+import { MainInformationComponent } from '../main-information.component';
 
 describe('SimilarRecipesComponent', () => {
   let component: SimilarRecipesComponent;
@@ -8,9 +9,9 @@ describe('SimilarRecipesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SimilarRecipesComponent ]
+      declarations: [SimilarRecipesComponent, MainInformationComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SimilarRecipesComponent);
     component = fixture.componentInstance;

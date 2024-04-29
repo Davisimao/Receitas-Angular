@@ -23,6 +23,7 @@ export class MainInformationComponent implements OnInit {
   ngOnInit(): void {
     this.getRecipeId();
     this.takeRecipe(this.recipeId);
+    this.recipeIdSimilar = this.recipeId
   }
 
   getRecipeId() {

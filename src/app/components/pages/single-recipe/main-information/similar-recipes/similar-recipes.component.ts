@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-similar-recipes',
@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SimilarRecipesComponent implements OnInit {
 
   constructor() { }
+
+  public loading: boolean = true
+
+  @Input() recipeIdSimilar!: number;
 
   ngOnInit(): void {
   }
